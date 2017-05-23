@@ -1,0 +1,18 @@
+<h1>Articles Galore</h1>
+
+<h2><%= link_to "Add A New Article", new_article_path %></h2>
+
+<hr>
+
+<% @articles.each do |article| %>
+  <h3>
+    <%= article.id %>)
+    <%= link_to article.title, article_path(article) %>
+
+  </h3>
+  <p>
+  <%= link_to "Edit Article", edit_article_path(article) %>
+  <%= link_to "Delete", article_path(article), method: :delete %>
+  <hr>
+  </p>
+<% end %>
