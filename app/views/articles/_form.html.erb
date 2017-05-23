@@ -1,11 +1,11 @@
 
-<%= form_for(@article) do |a| %>
-  <%= a.label :title %>
-  <%= a.text_field :title, :size => 50 %>
-<br>
-  <%= a.label :content %>
-  <%= a.text_field :content, :size => 150 %>
+  <%= form_for(@article, :html => {class: "form-something" } ) do |a| %>
+    <%= a.label :title %>
+    <%= a.text_field :title %>
+    <%= a.label :content %>
+    <%= a.text_area :content, id: "content" %>
 
-<br>
-  <%= a.submit %>
-<% end %>
+
+    <%= a.submit :class => "btn btn-primary" %>
+  <% end %>
+
